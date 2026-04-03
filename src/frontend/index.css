@@ -1,0 +1,183 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+
+    /* Dark theme — primary palette */
+    --background: 0.08 0 0;
+    --foreground: 0.97 0 0;
+    --card: 0.1 0 0;
+    --card-foreground: 0.97 0 0;
+    --popover: 0.12 0 0;
+    --popover-foreground: 0.97 0 0;
+
+    /* Primary = crimson red */
+    --primary: 0.52 0.22 25;
+    --primary-foreground: 0.97 0 0;
+
+    /* Secondary = dark surface */
+    --secondary: 0.15 0 0;
+    --secondary-foreground: 0.97 0 0;
+
+    /* Muted */
+    --muted: 0.18 0 0;
+    --muted-foreground: 0.6 0 0;
+
+    /* Accent = deep red */
+    --accent: 0.52 0.22 25;
+    --accent-foreground: 0.97 0 0;
+
+    /* Destructive */
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+
+    /* Borders */
+    --border: 0.25 0 0;
+    --input: 0.25 0 0;
+    --ring: 0.52 0.22 25;
+
+    /* Charts */
+    --chart-1: 0.52 0.22 25;
+    --chart-2: 0.6 0.118 184.704;
+    --chart-3: 0.398 0.07 227.392;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+
+    /* Sidebar */
+    --sidebar: 0.1 0 0;
+    --sidebar-foreground: 0.97 0 0;
+    --sidebar-primary: 0.52 0.22 25;
+    --sidebar-primary-foreground: 0.97 0 0;
+    --sidebar-accent: 0.15 0 0;
+    --sidebar-accent-foreground: 0.97 0 0;
+    --sidebar-border: 0.25 0 0;
+    --sidebar-ring: 0.52 0.22 25;
+
+    /* Custom brand tokens */
+    --brand-red: oklch(0.52 0.22 25);
+    --brand-red-hover: oklch(0.48 0.22 25);
+    --brand-red-light: oklch(0.62 0.18 25);
+    --brand-bg: #0a0a0a;
+    --brand-bg-alt: #111111;
+    --brand-surface: #1a1a1a;
+    --brand-border: #2a2a2a;
+    --brand-text: #ffffff;
+    --brand-muted: #a0a0a0;
+    --brand-green: #22c55e;
+    --brand-green-bg: #0a1f0a;
+    --brand-red-bg: #1f0a0a;
+  }
+
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--brand-bg);
+    color: var(--brand-text);
+    font-family: 'Cabinet Grotesk', 'Outfit', 'Figtree', 'General Sans', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bricolage Grotesque', 'Cabinet Grotesk', 'Outfit', system-ui, sans-serif;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* CTA Button base styles */
+.cta-btn {
+  display: inline-block;
+  background-color: var(--brand-red);
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+  box-shadow: 0 4px 24px rgba(231, 76, 60, 0.35);
+}
+
+.cta-btn:hover {
+  background-color: var(--brand-red-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(231, 76, 60, 0.5);
+}
+
+.cta-btn:active {
+  transform: translateY(0);
+}
+
+.cta-btn-lg {
+  font-size: 1.2rem;
+  padding: 1.2rem 2.5rem;
+}
+
+/* Trust line */
+.trust-line {
+  color: var(--brand-muted);
+  font-size: 0.8rem;
+  letter-spacing: 0.03em;
+  margin-top: 0.75rem;
+}
+
+/* Section containers */
+.section-dark {
+  background-color: var(--brand-bg);
+  padding: 5rem 1.5rem;
+}
+
+.section-alt {
+  background-color: var(--brand-bg-alt);
+  padding: 5rem 1.5rem;
+}
+
+.section-inner {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.section-inner-wide {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Divider */
+.section-divider {
+  border: none;
+  border-top: 1px solid var(--brand-border);
+  margin: 0;
+}
+
+/* Red number badge */
+.step-number {
+  color: var(--brand-red);
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 1;
+  font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+}
+
+/* CTA pulse glow animation — DISABLED for clean conversion look */
+.cta-pulse {
+  animation: none;
+}
